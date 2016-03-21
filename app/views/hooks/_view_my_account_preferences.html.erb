@@ -1,4 +1,4 @@
-<% unless user.two_step_auth.exempted? %>
+<% unless user.two_step_auth.try(:exempted?) %>
   <table>
     <tbody>
   <tr>

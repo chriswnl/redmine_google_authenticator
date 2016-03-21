@@ -1,11 +1,13 @@
 
-<%= labelled_form_for @two_step_auth, method: :put, url: check_two_step_path do |f| %>
+<%= form_for @two_step_auth, method: :put, url: check_two_step_path do |f| %>
 <div id="login-form">
 <table>
   <tbody>
     <tr>
-      
-        <td><%= f.password_field :gauthcode %>
+        <th>
+          <%= f.label t(:field_gauthcode, google_auth_site: Setting.app_title) %>        
+        </th>
+        <td><%= f.password_field :gauthcode  %>
         <%= f.submit "Verify" %>
         </td>
     </tr> 

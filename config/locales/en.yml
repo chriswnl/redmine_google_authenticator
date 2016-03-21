@@ -1,2 +1,3 @@
 en:
-  field_gauthcode: "Google Authenticator Code"
+  google_auth_site: "Redmine"
+  field_gauthcode: 'Google Authenticator Code for %{google_auth_site}'

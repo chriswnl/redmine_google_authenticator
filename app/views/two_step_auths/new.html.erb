@@ -1,30 +1,62 @@
-<div id="login-form">
-
-  <p>On your phone or tablet, use the Google Authenticator app to scan the image below and add dual factor authentication to your login.</p>
+<div class="gauth-box">
+  <table>
+    <tbody>
+      <tr>
+        <th><h3>Scan and verify</h3></th>
+      </tr>
+      <tr>
+        <th><%= image_tag show_qr_code_path %></th>
+      </tr>
+      
+      <tr>
+        <th>On your phone or tablet, use the Google Authenticator app to scan the image above and add dual factor authentication to your login.</th>
+      </tr>
+      <tr>
+        <th>If you don't have Google Authenticator, you can get it from one of the links below.</th>
+      </tr>
+      
   
-  <p>If you don't have Google Authenticator, you can get it from one of the links below.</p>
-  <p>
-  <%= link_to "Google Play (Android devices)", "https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" %> |
-  <%= link_to "App Store (iOS devices)", "https://itunes.apple.com/en/app/google-authenticator/id388497605?mt=8" %>
-  </p>
-  
-  <%# = image_tag( "tmp/#{@user.two_step_auth.to_qr}" ) %>
-  <%= image_tag show_qr_code_path %>
-  
-  <p>
-  When you've scanned the code and the entry has appeared in your Google Authenticator listings,
-  enter the code listed there in the box below and verify your installation. 
-  </p>
-  
-  <%= form_for @two_step_auth, url: create_two_step_auth_path do |f| %>
-    <%= f.text_field :gauthcode %>
-  
-    <%= f.submit "Verify" %>
-  <% end %>
-  <p>
-  <%= link_to "I'll do this all later", two_step_auth_path, method: :delete, data: {confirm: "If you press OK you will cancel the set up and 2-factor auth will not be enabled"} %>
-  
-  </p>
-
-
+      <tr>
+        <th>
+          <%= link_to "https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2", target: "_blank" do %>
+            <%= image_tag "GooglePlayBadge.png", width: "200px", alt: "Google Play", plugin: "google_authenticator" %>
+          <% end %> 
+          <%= link_to "https://itunes.apple.com/en/app/google-authenticator/id388497605?mt=8", target: "_blank" do %>
+            <%= image_tag "Apple_App_Store_Logo.jpeg", width: "200px", alt: "Apple Store", plugin: "google_authenticator" %>
+          <% end %>        
+        
+        
+        </th>      
+      
+      
+      </tr>
+      
+      <tr><br/></tr>
+      <tr>
+        <th>
+          When you've scanned the code and the entry has appeared in your Google Authenticator listings,
+          enter the code listed there in the box below and verify your installation.
+        </th>
+      </tr>
+      
+      <tr>
+        <%= form_for @two_step_auth, url: create_two_step_auth_path do |f| %>
+          <th>
+            <%= f.text_field :gauthcode %>
+            <%= f.submit "Verify" %>
+          </th>
+        <% end %>
+      </tr>
+      <tr>
+        <th>
+          <%= link_to "I'll do this all later", two_step_auth_path, method: :delete, data: {confirm: "If you press OK you will cancel the set up and 2-factor auth will not be enabled"} %>
+        </th>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
+<% content_for :header_tags do %>
+
+  <%= stylesheet_link_tag 'gauth', plugin: 'google_authenticator' %>
+<% end %>
