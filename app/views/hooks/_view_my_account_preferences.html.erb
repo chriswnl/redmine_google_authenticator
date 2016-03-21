@@ -1,0 +1,12 @@
+<table>
+  <tbody>
+<tr>
+<% if user.dual_auth? %>
+  <th><%= link_to "Disable dual factor authentication", two_step_auth_path, method: :delete, data: {confirm: "Dual factor authentication will be turned off. Are you sure?"}, class: "button" %></th>
+<% else %>
+  <th><%= link_to "Setup dual factor authentication", new_two_step_path, class: "button" %></th>
+<% end %>
+</tr>
+
+  </tbody>
+</table>

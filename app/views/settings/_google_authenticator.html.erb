@@ -1,0 +1,25 @@
+<h3>Configuring Google Authenticator 2-step authentication</h3>
+
+As an administrator you can set your authentication policy here.
+<p></p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>Allow user to enable?</th>
+      <td><%= check_box_tag "settings[two_step_auth][by_user]", "enabled", Setting.plugin_google_authenticator["two_step_auth"]["by_user"] %></td>
+          
+    </tr>
+    
+    <tr>
+      <th>Force for all users?</th>
+      <td><%= check_box_tag "settings[two_step_auth][force]", "enabled", Setting.plugin_google_authenticator["two_step_auth"]["force"] %></td>    
+    </tr>  
+    
+    <tr>
+      <th>Exempt admins?</th>
+      <td><%= check_box_tag "settings[two_step_auth][exempt_admins]", "enabled", Setting.plugin_google_authenticator["two_step_auth"]["exempt_admins"] %></td>    
+    </tr>   
+  </tbody>
+</table>
+ 
