@@ -32,7 +32,7 @@ module GoogleAuthenticator
     
     module InstanceMethods
       def dual_auth?
-        two_step_auth.try(:secret) && two_step_auth.enabled? && TwoStepAuth.is_enabled?  && !two_step_auth.exempted?
+        two_step_auth.try(:secret) && two_step_auth.try(:enabled?) && TwoStepAuth.is_enabled?  && !two_step_auth.try(:exempted?)
       end
     end
     

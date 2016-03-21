@@ -1,0 +1,17 @@
+
+.gauth-box {
+  padding-bottom: 80px;
+}
+
+.gauth-box table {
+    background-color: #ffebc1;
+    border: 2px solid #fdbf3b;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+    padding: 1em;
+}
+
+.gauth-box th {
+  padding: 10px;
+}

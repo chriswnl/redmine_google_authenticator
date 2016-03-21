@@ -9,7 +9,7 @@ class TwoStepAuth < ActiveRecord::Base
   attr_accessor :gauthcode
   
   def get_ga
-    @get_ga ||= ROTP::TOTP.new(self.secret)
+    @get_ga ||= ROTP::TOTP.new(self.secret, issuer: Setting.app_title)
   end
 
   def get_qr
@@ -61,7 +61,7 @@ class TwoStepAuth < ActiveRecord::Base
   end
   
   def to_qr
-    totp = ROTP::TOTP.new(self.secret, issuer: Redmine.name)
+    totp = ROTP::TOTP.new(self.secret, issuer: Setting.app_title)
     qrcode = RQRCode::QRCode.new(totp.provisioning_uri(self.user.login))
     tmpfile = "img-#{ROTP::Base32.random_base32(32)}.png"
     png = qrcode.as_png(
@@ -74,9 +74,7 @@ class TwoStepAuth < ActiveRecord::Base
           module_px_size: 6,
           file:  nil # path to write
           )
-    #"public/images/tmp/#{tmpfile}"
-    #IO.write("/tmp/github-qrcode.png", png.to_s)
-    #png ? tmpfile : nil
+   
     
   end
 
