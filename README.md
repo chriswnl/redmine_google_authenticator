@@ -18,9 +18,9 @@ thus not polluting exisiting tables.
 
 ## Configure
 Under Admin/Plugins you can set a policy. Currently these are whether:
-+ users can enable the setting
-+ it should be enforced
-+ Administrators should be exempted
+* users can enable the setting
+* it should be enforced
+* Administrators should be exempted
 
 ## User settings
 The user can find the settings on their account page at the bottom of the prefences box.
