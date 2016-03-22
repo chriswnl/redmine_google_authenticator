@@ -14,7 +14,7 @@ Redmine::Plugin.register :google_authenticator do
   description 'Adds Google Authenitcator 2-step authentication'
   version '0.0.2'
   
-  settings default: {"two_step_auth" => {"by_user" = "disabled"} }, partial: 'settings/google_authenticator'
+  settings default: {"two_step_auth" => {"by_user" => "disabled"} }, partial: 'settings/google_authenticator'
   #permission :view_ratings, :ratings => :index
   #menu(:top_menu, "Authentication", '/settings/authentication')
 end
