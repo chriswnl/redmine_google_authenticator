@@ -12,7 +12,7 @@ Redmine::Plugin.register :google_authenticator do
   name 'Google Authenticator'
   author 'Chris Willis'
   description 'Adds Google Authenitcator 2-step authentication'
-  version '0.0.1'
+  version '0.0.2'
   
   settings default: {two_step_auth: {} }, partial: 'settings/google_authenticator'
   #permission :view_ratings, :ratings => :index
