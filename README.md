@@ -1,9 +1,9 @@
-# Google Authenticator Plugin
+# Redmine Google Authenticator Plugin
 
-Allows dual factor authentication using the Google Authenticator plugin from the Android Play store, or Apple's Apps Store.
+Gives [Redmine](http://redmine.org) dual factor authentication using the Google Authenticator plugin from the Android Play store, or Apple's Apps Store.
 
 ## Install
-Download the plugin into the /plugins directory and make sure the name of the subdir is 'google_authenticator'
+Download the plugin into the #redmine_root#/plugins directory and make sure the name of the subdir is 'google_authenticator'
 then
 
 ```rake redmine:plugins``` and
