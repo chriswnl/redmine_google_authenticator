@@ -1,4 +1,4 @@
-<% unless user.two_step_auth.try(:exempted?) %>
+<% unless Setting.plugin_redmine_google_authenticator[:two_step_auth][:exempt_admins] %>
   <table>
     <tbody>
       <tr>

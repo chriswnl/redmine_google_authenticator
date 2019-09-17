@@ -28,7 +28,7 @@ class TwoStepAuth < ActiveRecord::Base
   end
           
   def self.settings
-    Setting.plugin_google_authenticator["two_step_auth"]
+    Setting.plugin_redmine_google_authenticator[:two_step_auth]
   end  
  
   def enable!
@@ -47,8 +47,8 @@ class TwoStepAuth < ActiveRecord::Base
     true if self.settings["exempt_admins"] == "enabled"
   end
   
-  def exempted?
-    true if self.class.admins_exempt? && self.user.admin?
+  def self.exempted?
+    true if self.admins_exempt? && self.user.admin?
   end
 
   def gauth_tmp
