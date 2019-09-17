@@ -1,4 +1,4 @@
-class CreateTwoStepAuths < ActiveRecord::Migration
+class CreateTwoStepAuths < ActiveRecord::Migration[5.0]
   def change
     create_table :two_step_auths do |t|
       t.string :secret

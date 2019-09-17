@@ -1,7 +1,7 @@
 class TwoStepAuthsController < ApplicationController
   unloadable
 
-  before_filter :require_login
+  before_action :require_login
   
   #helper :issues
   helper :users
